@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, connect } from "react-redux";
 import * as type from "../actions/types";
 
 const initialState = {
@@ -21,5 +21,13 @@ const TestReduxReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+function getCurrentState(whole, ownProps) {
+  return whole;
+}
+
+function mapDispatchToProps(dispatch, ownProps) {
+  return;
+}
 
 export default TestReduxReducer;
