@@ -340,10 +340,12 @@ export const itemDetailUpdateFetchingItemNameAction = (fetchingItemName) => ({
   fetchingItemName,
 });
 
-export const itemDetailItemId = (itemId) => ({
-  type: type.ITEM_DETAIL_ITEM_ID,
-  itemId,
-});
+export const itemDetailItemId = (itemId) => {
+  return {
+    type: type.ITEM_DETAIL_ITEM_ID,
+    itemId,
+  };
+};
 
 export const testReduxTest = (text) => {
   console.log("들어옴: ", text);

@@ -1,24 +1,20 @@
+import { useSelector } from "react-redux";
 import * as type from "../actions/types";
 
 const initialState = {
-  text: { text: "text" },
+  text: "",
   isLoggedIn: false,
 };
 
-const testReduxReducer = (state = initialState, action) => {
-  console.log("리듀서 건듬");
+const TestReduxReducer = (state = initialState, action) => {
+  // const item = useSelector((state) => state.dashboard);
+  console.log("건드림");
   switch (action.type) {
     case type.TEST_REDUX_TEXT:
       console.log("테스트 리덕스 작동", action);
-    // return {
-    //   ...state,
-    //   user: action.userData,
-    //   isLoggedIn: action.isLoggedIn,
-    // };
-    case type.LOGOUT_USER:
       return {
         ...state,
-        user: action.userData,
+        text: action.text,
         isLoggedIn: action.isLoggedIn,
       };
     default:
@@ -26,4 +22,4 @@ const testReduxReducer = (state = initialState, action) => {
   }
 };
 
-export default testReduxReducer;
+export default TestReduxReducer;

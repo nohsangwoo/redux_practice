@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { testReduxTest } from "./actions/action";
+import { itemDetailItemId, testReduxTest } from "./actions/action";
 function App() {
   const dispatch = useDispatch();
   const item = useSelector((state) => state.dashboard);

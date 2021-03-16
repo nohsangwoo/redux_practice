@@ -9,6 +9,7 @@ import selectCategory from "./selectCategory";
 import promotion from "./promotion";
 import dashboard from "./dashboard";
 import itemDetailPage from "./itemDetailPage";
+import TestReduxReducer from "./testReduxReducer";
 import main from "./main";
 
 export default combineReducers({
@@ -23,4 +24,5 @@ export default combineReducers({
   dashboard,
   main,
   itemDetailPage,
+  TestReduxReducer,
 });
