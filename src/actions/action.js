@@ -1,6 +1,6 @@
-import * as type from './types';
-import { fetchPayOrders, fetchReturnOrders } from '../services/dashboard';
-import { makeChartOrderSumData } from './dashboardUtils';
+import * as type from "./types";
+// import { fetchPayOrders, fetchReturnOrders } from "../services/dashboard";
+import { makeChartOrderSumData } from "./dashboardUtils";
 
 export const loginAction = (userData) => ({
   type: type.LOGIN_USER,
@@ -179,9 +179,9 @@ export const setDashboardPayOrdersSumDatapoints = ({
     data,
     startDate,
     endDate,
-    dateType: 'order_date',
+    dateType: "order_date",
     platforms,
-    column: 'payment_amount',
+    column: "payment_amount",
   });
 
   return {
@@ -200,7 +200,7 @@ export const setDashboardPayOrdersCountDatapoints = ({
     data,
     startDate,
     endDate,
-    dateType: 'order_date',
+    dateType: "order_date",
     platforms,
   });
 
@@ -220,9 +220,9 @@ export const setDashboardReturnOrdersSumDatapoints = ({
     data,
     startDate,
     endDate,
-    dateType: 'return_confirmed_date',
+    dateType: "return_confirmed_date",
     platforms,
-    column: 'payment_amount',
+    column: "payment_amount",
   });
 
   return {
@@ -241,7 +241,7 @@ export const setDashboardReturnOrdersCountDatapoints = ({
     data,
     startDate,
     endDate,
-    dateType: 'return_confirmed_date',
+    dateType: "return_confirmed_date",
     platforms,
   });
 
@@ -251,61 +251,61 @@ export const setDashboardReturnOrdersCountDatapoints = ({
   };
 };
 
-export const loadDashboardPayOrders = ({ startDate, endDate }) => async (
-  dispatch,
-  getState,
-) => {
-  const data = await fetchPayOrders({ startDate, endDate });
-  const {
-    dashboard: { platforms },
-  } = getState();
+// export const loadDashboardPayOrders = ({ startDate, endDate }) => async (
+//   dispatch,
+//   getState
+// ) => {
+//   const data = await fetchPayOrders({ startDate, endDate });
+//   const {
+//     dashboard: { platforms },
+//   } = getState();
 
-  dispatch(setDashboardPayOrders(data));
-  dispatch(
-    setDashboardPayOrdersSumDatapoints({
-      data,
-      platforms,
-      startDate,
-      endDate,
-    }),
-  );
-  dispatch(
-    setDashboardPayOrdersCountDatapoints({
-      data,
-      platforms,
-      startDate,
-      endDate,
-    }),
-  );
-};
+//   dispatch(setDashboardPayOrders(data));
+//   dispatch(
+//     setDashboardPayOrdersSumDatapoints({
+//       data,
+//       platforms,
+//       startDate,
+//       endDate,
+//     })
+//   );
+//   dispatch(
+//     setDashboardPayOrdersCountDatapoints({
+//       data,
+//       platforms,
+//       startDate,
+//       endDate,
+//     })
+//   );
+// };
 
-export const loadDashboardReturnOrders = ({ startDate, endDate }) => async (
-  dispatch,
-  getState,
-) => {
-  const data = await fetchReturnOrders({ startDate, endDate });
-  const {
-    dashboard: { platforms },
-  } = getState();
+// export const loadDashboardReturnOrders = ({ startDate, endDate }) => async (
+//   dispatch,
+//   getState
+// ) => {
+//   const data = await fetchReturnOrders({ startDate, endDate });
+//   const {
+//     dashboard: { platforms },
+//   } = getState();
 
-  dispatch(setDashboardReturnOrders(data));
-  dispatch(
-    setDashboardReturnOrdersSumDatapoints({
-      data,
-      platforms,
-      startDate,
-      endDate,
-    }),
-  );
-  dispatch(
-    setDashboardReturnOrdersCountDatapoints({
-      data,
-      platforms,
-      startDate,
-      endDate,
-    }),
-  );
-};
+//   dispatch(setDashboardReturnOrders(data));
+//   dispatch(
+//     setDashboardReturnOrdersSumDatapoints({
+//       data,
+//       platforms,
+//       startDate,
+//       endDate,
+//     })
+//   );
+//   dispatch(
+//     setDashboardReturnOrdersCountDatapoints({
+//       data,
+//       platforms,
+//       startDate,
+//       endDate,
+//     })
+//   );
+// };
 
 export const currentSearchOption = (params, pageList) => ({
   type: type.EXIHIBITION_LAST_SEARCH_DATA,
@@ -344,3 +344,11 @@ export const itemDetailItemId = (itemId) => ({
   type: type.ITEM_DETAIL_ITEM_ID,
   itemId,
 });
+
+export const testReduxTest = (text) => {
+  console.log("들어옴: ", text);
+  return {
+    type: type.TEST_REDUX_TEXT,
+    text,
+  };
+};
